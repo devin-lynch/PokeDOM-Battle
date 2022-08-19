@@ -53,7 +53,17 @@ function skullBash() {
 }
 
 
+
 // Dragonite moves
+
+const cpuAttacks = [hyperBeam, dragonRush, hurricane, thunderPunch]
+
+function dragoniteAttack() {
+    const random = Math.floor(Math.random() * 4);
+    cpuAttacks[random]
+    console.log(cpuAttacks[random])
+} 
+
 function hyperBeam() {
     playerHealth -= 25
     console.log(`The wild Dragonite used Hyper Beam!`)
@@ -82,13 +92,14 @@ function thunderPunch() {
     defeat() // checks if user HP is 0
 }
 
-
+dragoniteAttack()
 
 
 
 
 //message if player wins
 function victory() {
+    // Ensure you can't continue attacking after victory
     if (cpuHealth <= 0) { 
         console.log(`The wild Dragonite fainted!`)
     }
@@ -96,6 +107,7 @@ function victory() {
 
 //message if cpu wins
 function defeat() {
+    // Ensure you can't continue attacking after defeat
     if (playerHealth <= 0) {
         console.log(`Your Mankey fainted! You were overwhelmed by your defeat!`)
     }
