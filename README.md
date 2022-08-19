@@ -34,16 +34,4 @@
 #### WIREFRAME:
 
 
- [ computer   ]         [        ]
- [    hp      ]         computer's
-                          pokemon
-                        [        ]
-
-[       battle evnironment        ]
-
-
-[       ]              player hp
- players             [   user     ]
- pokemon             [   mmoves   ]
-[       ]
-
+![battle format](https://i.imgur.com/aZWVWGv.png)
