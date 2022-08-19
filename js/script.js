@@ -55,12 +55,30 @@ function skullBash() {
 
 // Dragonite moves
 function hyperBeam() {
-    playerHealth - 25
+    playerHealth -= 25
+    console.log(`The wild Dragonite used Hyper Beam!`)
+    console.log(playerHealth)
     defeat() // checks if user HP is 0
 }
 
 function dragonRush() {
-    playerHealth - 20
+    playerHealth -= 20
+    console.log(`The wild Dragonite used Dragon Rush!`)
+    console.log(playerHealth)
+    defeat() // checks if user HP is 0
+}
+
+function hurricane() {
+    playerHealth -= 35
+    console.log(`The wild Dragonite used Hurricane!`)
+    console.log(playerHealth)
+    defeat() // checks if user HP is 0
+}
+
+function thunderPunch() {
+    playerHealth -= 20
+    console.log(`The wild Dragonite used Thunder Punch!`)
+    console.log(playerHealth)
     defeat() // checks if user HP is 0
 }
 
