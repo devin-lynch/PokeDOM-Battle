@@ -4,7 +4,7 @@ const attackTwo = document.querySelector('#attack-two')
 const attackThree = document.querySelector('#attack-three')
 const attackFour = document.querySelector('#attack-four')
 const textBar = document.querySelector('.textbar')
-console.log(textBar)
+
 let playerHealth = 100
 let cpuHealth = 100
 
@@ -15,18 +15,36 @@ let cpuHealth = 100
 
 // Stretch goal: make an ability that enhances the next turns ability?
 
+attackOne.addEventListener('click', lowKick)
+attackTwo.addEventListener('click', scratch)
+attackThree.addEventListener('click', closeCombat)
+attackFour.addEventListener('click', skullBash)
+
+
 
 // Mankey moves
 function lowKick() {
-    cpuHealth - 20
+    cpuHealth -= 20
+    console.log(`Mankey used Low Kick!`)
+    console.log(cpuHealth)
 }
 
 function scratch() {
-    cpuHealth - 25
+    cpuHealth -= 25
+    console.log(`Mankey used Scratch!`)
+    console.log(cpuHealth)
 }
 
 function closeCombat() {
-    cpuHealth - 30
+    cpuHealth -= 30
+    console.log(`Mankey used Close Combat!`)
+    console.log(cpuHealth)
+}
+
+function skullBash() {
+    cpuHealth -= 20
+    console.log(`Mankey used Skull Bash!`)
+    console.log(cpuHealth)
 }
 
 
@@ -40,9 +58,7 @@ function dragonRush() {
 }
 
 
-function attack() {
 
-}
 
 
 
