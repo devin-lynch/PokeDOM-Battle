@@ -1,32 +1,41 @@
-body {
+.grid-container {
     background-color: antiquewhite;
     display: grid;
-    grid-template-columns: ;
-    grid-template-rows: ;
-    grid-template-areas: ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 150px 110px 150px 130px ;
+    grid-template-areas:    "cpu-health cpu-pokemon"
+                            "user-pokemon cpu-pokemon"
+                            "user-pokemon user-health"
+                            "textbar attack-selection";
     
 }
 
-#cpu-pokemon {
+.cpu-pokemon {
     grid-area: cpu-pokemon;
+    background-color: aqua;
 }
 
-#cpu-health {
+.cpu-health {
     grid-area: cpu-health;
+    background-color: beige;
 }
 
-#user-health {
+.user-health {
     grid-area: user-health;
+    background-color: blueviolet;
 }
 
-#user-pokemon {
+.user-pokemon {
     grid-area: user-pokemon;
+    background-color: hotpink;
 }
 
-#textbar {
+.textbar {
     grid-area: textbar;
+    background-color: red;
 }
 
-#attack-selection {
+.attack-selection {
     grid-area: attack-selection;
+    background-color: teal;
 }
