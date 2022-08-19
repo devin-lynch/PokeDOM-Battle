@@ -39,3 +39,12 @@
     grid-area: attack-selection;
     background-color: teal;
 }
+
+#cpu-pokemon {
+    height: 300px;
+    align-items: end;
+}
+
+#user-pokemon {
+    height: 300px;
+}
