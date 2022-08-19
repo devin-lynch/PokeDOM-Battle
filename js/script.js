@@ -15,6 +15,7 @@ let cpuHealth = 100
 
 // Stretch goal: make an ability that enhances the next turns ability?
 
+// Attack buttons
 attackOne.addEventListener('click', lowKick)
 attackTwo.addEventListener('click', scratch)
 attackThree.addEventListener('click', closeCombat)
@@ -27,34 +28,40 @@ function lowKick() {
     cpuHealth -= 20
     console.log(`Mankey used Low Kick!`)
     console.log(cpuHealth)
+    victory() // checks if cpu HP is 0
 }
 
 function scratch() {
     cpuHealth -= 25
     console.log(`Mankey used Scratch!`)
     console.log(cpuHealth)
+    victory() // checks if cpu HP is 0
 }
 
 function closeCombat() {
     cpuHealth -= 30
     console.log(`Mankey used Close Combat!`)
     console.log(cpuHealth)
+    victory() // checks if cpu HP is 0
 }
 
 function skullBash() {
     cpuHealth -= 20
     console.log(`Mankey used Skull Bash!`)
     console.log(cpuHealth)
+    victory() // checks if cpu HP is 0
 }
 
 
 // Dragonite moves
 function hyperBeam() {
     playerHealth - 25
+    defeat() // checks if user HP is 0
 }
 
 function dragonRush() {
     playerHealth - 20
+    defeat() // checks if user HP is 0
 }
 
 
@@ -65,14 +72,14 @@ function dragonRush() {
 //message if player wins
 function victory() {
     if (cpuHealth <= 0) { 
-
+        console.log(`The wild Dragonite fainted!`)
     }
 }
 
 //message if cpu wins
 function defeat() {
     if (playerHealth <= 0) {
-
+        console.log(`Your Mankey fainted! You were overwhelmed by your defeat!`)
     }
 }
 
