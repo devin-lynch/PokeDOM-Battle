@@ -1,5 +1,10 @@
 console.log('hello from js')
-
+const attackOne = document.querySelector('#attack-one')
+const attackTwo = document.querySelector('#attack-two')
+const attackThree = document.querySelector('#attack-three')
+const attackFour = document.querySelector('#attack-four')
+const textBar = document.querySelector('.textbar')
+console.log(textBar)
 let playerHealth = 100
 let cpuHealth = 100
 
@@ -36,7 +41,7 @@ function dragonRush() {
 
 
 function attack() {
-    
+
 }
 
 
