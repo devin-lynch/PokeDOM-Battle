@@ -30,50 +30,58 @@ attackFour.addEventListener('click', skullBash)
 
 // Mankey moves
 function lowKick() {
-    cpuHealth -= 20
-    console.log(`Mankey used Low Kick!`)
-    console.log(`Dragonite has ${cpuHealth}hp!`)
-    victory() // checks if cpu HP is 0
-    turn = 'Dragonite'
-    console.log(`It's ${turn}'s turn to attack!`)
-    if (turn === 'Dragonite' && playerHealth > 0) {
-        dragoniteAttack()
+    if (turn === "Mankey" && cpuHealth > 0 && playerHealth > 0) {
+        cpuHealth -= 20
+        console.log(`Mankey used Low Kick!`)
+        console.log(`Dragonite has ${cpuHealth}hp!`)
+        victory() // checks if cpu HP is 0
+        turn = 'Dragonite'
+        console.log(`It's ${turn}'s turn to attack!`)
+        if (turn === 'Dragonite' && playerHealth > 0) {
+            dragoniteAttack()
+        }
     }
 }
 
 function scratch() {
-    cpuHealth -= 25
-    console.log(`Mankey used Scratch!`)
-    console.log(`Dragonite has ${cpuHealth}hp!`)
-    victory() // checks if cpu HP is 0
-    turn = 'Dragonite'
-    console.log(`It's ${turn}'s turn to attack!`)
-    if (turn === 'Dragonite' && playerHealth > 0) {
-        dragoniteAttack()
+    if (turn === "Mankey" && cpuHealth > 0 && playerHealth > 0) {
+        cpuHealth -= 25
+        console.log(`Mankey used Scratch!`)
+        console.log(`Dragonite has ${cpuHealth}hp!`)
+        victory() // checks if cpu HP is 0
+        turn = 'Dragonite'
+        console.log(`It's ${turn}'s turn to attack!`)
+        if (turn === 'Dragonite' && playerHealth > 0) {
+            dragoniteAttack()
+        }
     }
 }
 
 function closeCombat() {
-    cpuHealth -= 30
-    console.log(`Mankey used Close Combat!`)
-    console.log(`Dragonite has ${cpuHealth}hp!`)
-    victory() // checks if cpu HP is 0
-    turn = 'Dragonite'
-    console.log(`It's ${turn}'s turn to attack!`)
-    if (turn === 'Dragonite' && playerHealth > 0) {
-        dragoniteAttack()
+    if (turn === "Mankey" && cpuHealth > 0 && playerHealth > 0) {
+        cpuHealth -= 30
+        console.log(`Mankey used Close Combat!`)
+        console.log(`Dragonite has ${cpuHealth}hp!`)
+        victory() // checks if cpu HP is 0
+        turn = 'Dragonite'
+        console.log(`It's ${turn}'s turn to attack!`)
+        if (turn === 'Dragonite' && playerHealth > 0) {
+            dragoniteAttack()
+        }
     }
 }
 
 function skullBash() {
-    cpuHealth -= 20
-    console.log(`Mankey used Skull Bash!`)
-    console.log(`Dragonite has ${cpuHealth}hp!`)
-    victory() // checks if cpu HP is 0
-    turn = 'Dragonite'
-    console.log(`It's ${turn}'s turn to attack!`)
-    if (turn === 'Dragonite' && playerHealth > 0) {
-        dragoniteAttack()
+    if (turn === "Mankey" && cpuHealth > 0 && playerHealth > 0) {
+        cpuHealth -= 20
+        console.log(`Mankey used Skull Bash!`)
+        console.log(`Dragonite has ${cpuHealth}hp!`)
+        victory() // checks if cpu HP is 0
+        turn = 'Dragonite'
+        console.log(`It's ${turn}'s turn to attack!`)
+        if (turn === 'Dragonite' && playerHealth > 0) {
+            dragoniteAttack()
+        }
     }
 }
 
@@ -84,11 +92,13 @@ function skullBash() {
 const cpuAttacks = [hyperBeam, dragonRush, hurricane, thunderPunch]
 
 function dragoniteAttack() {
-    const random = Math.floor(Math.random() * 4);
-    cpuAttacks[random]()
-    console.log(`Mankey has ${playerHealth}hp!`)
-    console.log(`It's ${turn}'s turn to attack!`)
-    // console.log(cpuAttacks[random])
+    if (playerHealth > 0 && cpuHealth > 0) {
+        const random = Math.floor(Math.random() * 4);
+        cpuAttacks[random]()
+        console.log(`Mankey has ${playerHealth}hp!`)
+        console.log(`It's ${turn}'s turn to attack!`)
+        // console.log(cpuAttacks[random])
+    }
 } 
 
 
