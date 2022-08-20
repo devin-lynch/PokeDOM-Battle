@@ -36,7 +36,7 @@ function lowKick() {
     victory() // checks if cpu HP is 0
     turn = 'Dragonite'
     console.log(`It's ${turn}'s turn to attack!`)
-    if (turn === 'Dragonite') {
+    if (turn === 'Dragonite' && playerHealth > 0) {
         dragoniteAttack()
     }
 }
@@ -48,7 +48,7 @@ function scratch() {
     victory() // checks if cpu HP is 0
     turn = 'Dragonite'
     console.log(`It's ${turn}'s turn to attack!`)
-    if (turn === 'Dragonite') {
+    if (turn === 'Dragonite' && playerHealth > 0) {
         dragoniteAttack()
     }
 }
@@ -60,7 +60,7 @@ function closeCombat() {
     victory() // checks if cpu HP is 0
     turn = 'Dragonite'
     console.log(`It's ${turn}'s turn to attack!`)
-    if (turn === 'Dragonite') {
+    if (turn === 'Dragonite' && playerHealth > 0) {
         dragoniteAttack()
     }
 }
@@ -72,7 +72,7 @@ function skullBash() {
     victory() // checks if cpu HP is 0
     turn = 'Dragonite'
     console.log(`It's ${turn}'s turn to attack!`)
-    if (turn === 'Dragonite') {
+    if (turn === 'Dragonite' && playerHealth > 0) {
         dragoniteAttack()
     }
 }
