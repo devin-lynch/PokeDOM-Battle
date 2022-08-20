@@ -7,12 +7,16 @@ const textBar = document.querySelector('.textbar')
 
 let playerHealth = 100
 let cpuHealth = 100
-let turn = 0
+let turn = 'Mankey'
 
-// Need to determine if using 'real' pokemon or something else for characters (like dog vs mailman)
-// Can then decide on attacks
+// Need to alternate turns and ensure Dragonite does not immediately attack after mankey attacks. 
+// Can make an 'a' button to advance text.
+// Create conditional if (turn === 'Dragonite') {
+//     dragoniteAttack()} 
 
-// MVP cpu has one attack -- can add more after battle is working. Player will have 2-4 to choose from. 
+
+
+
 
 // Stretch goal: make an ability that enhances the next turns ability?
 
@@ -30,7 +34,11 @@ function lowKick() {
     console.log(`Mankey used Low Kick!`)
     console.log(`Dragonite has ${cpuHealth}hp!`)
     victory() // checks if cpu HP is 0
-    turn = 1
+    turn = 'Dragonite'
+    console.log(`It's ${turn}'s turn to attack!`)
+    if (turn === 'Dragonite') {
+        dragoniteAttack()
+    }
 }
 
 function scratch() {
@@ -38,7 +46,11 @@ function scratch() {
     console.log(`Mankey used Scratch!`)
     console.log(`Dragonite has ${cpuHealth}hp!`)
     victory() // checks if cpu HP is 0
-    turn = 1
+    turn = 'Dragonite'
+    console.log(`It's ${turn}'s turn to attack!`)
+    if (turn === 'Dragonite') {
+        dragoniteAttack()
+    }
 }
 
 function closeCombat() {
@@ -46,7 +58,11 @@ function closeCombat() {
     console.log(`Mankey used Close Combat!`)
     console.log(`Dragonite has ${cpuHealth}hp!`)
     victory() // checks if cpu HP is 0
-    turn = 1
+    turn = 'Dragonite'
+    console.log(`It's ${turn}'s turn to attack!`)
+    if (turn === 'Dragonite') {
+        dragoniteAttack()
+    }
 }
 
 function skullBash() {
@@ -54,7 +70,11 @@ function skullBash() {
     console.log(`Mankey used Skull Bash!`)
     console.log(`Dragonite has ${cpuHealth}hp!`)
     victory() // checks if cpu HP is 0
-    turn = 1
+    turn = 'Dragonite'
+    console.log(`It's ${turn}'s turn to attack!`)
+    if (turn === 'Dragonite') {
+        dragoniteAttack()
+    }
 }
 
 
@@ -67,6 +87,7 @@ function dragoniteAttack() {
     const random = Math.floor(Math.random() * 4);
     cpuAttacks[random]()
     console.log(`Mankey has ${playerHealth}hp!`)
+    console.log(`It's ${turn}'s turn to attack!`)
     // console.log(cpuAttacks[random])
 } 
 
@@ -76,31 +97,33 @@ function hyperBeam() {
     playerHealth -= 25
     console.log(`The wild Dragonite used Hyper Beam!`)
     defeat() // checks if user HP is 0
-    turn = 0
+    turn = 'Mankey'
 }
 
 function dragonRush() {
     playerHealth -= 20
     console.log(`The wild Dragonite used Dragon Rush!`)
     defeat() // checks if user HP is 0
-    turn = 0
+    turn = 'Mankey'
 }
 
 function hurricane() {
     playerHealth -= 35
     console.log(`The wild Dragonite used Hurricane!`)
     defeat() // checks if user HP is 0
-    turn = 0
+    turn = 'Mankey'
 }
 
 function thunderPunch() {
     playerHealth -= 20
     console.log(`The wild Dragonite used Thunder Punch!`)
     defeat() // checks if user HP is 0
-    turn = 0
+    turn = 'Mankey'
 }
 
-dragoniteAttack()
+// if (turn === 'Dragonite') {
+//     dragoniteAttack()
+// }
 
 
 
