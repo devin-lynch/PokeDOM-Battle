@@ -54,29 +54,29 @@
 #attack-one {
     grid-area: one;
     position: absolute;
-    bottom: 8px;
-    left: 16px;
+    bottom: 120px;
+    left: 24px;
 }
 
 #attack-two {
     grid-area: two;
     position: absolute;
-    bottom: 8px;
-    right: 16px;
+    bottom: 120px;
+    right: 24px;
 }
 
 #attack-three {
     grid-area: three;
     position: absolute;
-    top: 8px;
-    left: 16px;
+    bottom: 60px;
+    left: 24px;
 }
 
 #attack-four {
     grid-area: four;
     position: absolute;
-    top: 8px;
-    right: 16px;
+    bottom: 60px;
+    right: 24px;
 }
 
 /* --------------------------------------- */
