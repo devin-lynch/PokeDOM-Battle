@@ -48,35 +48,35 @@
     grid-template-rows: 1fr 1fr;
     grid-template-areas:    "one two"
                             "three four";
-    /* position: relative; */
+    position: relative;
 }
 
 #attack-one {
     grid-area: one;
-    /* position: absolute;
-    top: 8px;
-    left: 16px; */
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
 }
 
 #attack-two {
     grid-area: two;
-    /* position: absolute;
-    top: 8px;
-    right: 16px; */
+    position: absolute;
+    bottom: 8px;
+    right: 16px;
 }
 
 #attack-three {
     grid-area: three;
-    /* position: absolute;
-    bottom: 8px;
-    left: 16px; */
+    position: absolute;
+    top: 8px;
+    left: 16px;
 }
 
 #attack-four {
     grid-area: four;
-    /* position: absolute;
-    bottom: 8px;
-    right: 16px; */
+    position: absolute;
+    top: 8px;
+    right: 16px;
 }
 
 /* --------------------------------------- */
@@ -97,11 +97,12 @@
 
 #battlebar-border {
     width: 100%;
-    height: 100%
+    height: 100%;
+    
 }
 
 .button {
-    position: relative;
+    /* position: relative; */
     border: none;
     text-align: center;
     text-decoration: none;
