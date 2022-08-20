@@ -56,13 +56,15 @@ function skullBash() {
 
 // Dragonite moves
 
-const cpuAttacks = [hyperBeam, dragonRush, hurricane, thunderPunch]
+const cpuAttacks = [hyperBeam(), dragonRush(), hurricane(), thunderPunch()]
 
 function dragoniteAttack() {
     const random = Math.floor(Math.random() * 4);
     cpuAttacks[random]
-    console.log(cpuAttacks[random])
+    // console.log(cpuAttacks[random])
 } 
+
+
 
 function hyperBeam() {
     playerHealth -= 25
