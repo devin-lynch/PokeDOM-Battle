@@ -26,7 +26,7 @@ attackTwo.addEventListener('click', scratch)
 attackThree.addEventListener('click', closeCombat)
 attackFour.addEventListener('click', skullBash)
 
-
+// Need to stop console logging turn if a pokemon has fainted
 
 // Mankey moves
 function lowKick() {
@@ -36,8 +36,8 @@ function lowKick() {
         console.log(`Dragonite has ${cpuHealth}hp!`)
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
-        console.log(`It's ${turn}'s turn to attack!`)
-        if (turn === 'Dragonite' && playerHealth > 0) {
+        if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
+            console.log(`It's ${turn}'s turn to attack!`)
             dragoniteAttack()
         }
     }
@@ -50,8 +50,8 @@ function scratch() {
         console.log(`Dragonite has ${cpuHealth}hp!`)
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
-        console.log(`It's ${turn}'s turn to attack!`)
-        if (turn === 'Dragonite' && playerHealth > 0) {
+        if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
+            console.log(`It's ${turn}'s turn to attack!`)
             dragoniteAttack()
         }
     }
@@ -64,8 +64,8 @@ function closeCombat() {
         console.log(`Dragonite has ${cpuHealth}hp!`)
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
-        console.log(`It's ${turn}'s turn to attack!`)
-        if (turn === 'Dragonite' && playerHealth > 0) {
+        if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
+            console.log(`It's ${turn}'s turn to attack!`)
             dragoniteAttack()
         }
     }
@@ -78,8 +78,8 @@ function skullBash() {
         console.log(`Dragonite has ${cpuHealth}hp!`)
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
-        console.log(`It's ${turn}'s turn to attack!`)
-        if (turn === 'Dragonite' && playerHealth > 0) {
+        if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
+            console.log(`It's ${turn}'s turn to attack!`)
             dragoniteAttack()
         }
     }
@@ -96,7 +96,9 @@ function dragoniteAttack() {
         const random = Math.floor(Math.random() * 4);
         cpuAttacks[random]()
         console.log(`Mankey has ${playerHealth}hp!`)
-        console.log(`It's ${turn}'s turn to attack!`)
+        if (playerHealth > 0) {
+            console.log(`It's ${turn}'s turn to attack!`)
+        }
         // console.log(cpuAttacks[random])
     }
 } 
