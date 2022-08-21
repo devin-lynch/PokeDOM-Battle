@@ -34,6 +34,13 @@
 .textbar {
     grid-area: textbar;
     background-color: red;
+    position: relative;
+}
+
+#text {
+    position: absolute;
+    top: 10%;
+    left: 7%;
 }
 
 .attack-selection {
@@ -54,30 +61,42 @@
 #attack-one {
     grid-area: one;
     position: absolute;
-    bottom: 120px;
+    bottom: 100px;
     left: 24px;
+    
+    width: 100%;
+    
 }
 
 #attack-two {
     grid-area: two;
     position: absolute;
-    bottom: 120px;
+    bottom: 100px;
     right: 24px;
+    width: 100%;
 }
 
 #attack-three {
     grid-area: three;
     position: absolute;
-    bottom: 60px;
+    bottom: 30px;
     left: 24px;
+    width: 100%;
 }
 
 #attack-four {
     grid-area: four;
     position: absolute;
-    bottom: 60px;
+    bottom: 30px;
     right: 24px;
+    width: 100%;
 }
+
+.button {
+    height: 40px;
+    width: 100%;
+}
+
 
 /* --------------------------------------- */
 
@@ -107,8 +126,10 @@
 
 .button {
     /* position: relative; */
-    border: none;
+    height: 60px;
+    width: 100%;
     text-align: center;
     text-decoration: none;
     background-color: gray;
+
 }

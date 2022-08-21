@@ -4,8 +4,13 @@ const attackTwo = document.querySelector('#attack-two')
 const attackThree = document.querySelector('#attack-three')
 const attackFour = document.querySelector('#attack-four')
 const textBar = document.querySelector('.textbar')
+const text = document.querySelector('#text')
 const cpuHealthBar = document.querySelector('#cpu-health')
 const playerHealthBar = document.querySelector('#user-health')
+const aButton = document.querySelector('#a')
+
+// a button to clear text. can then add conditional "if turn = dragonite and text = ""... then allow dragonite to attack"
+// aButton.addEventListener('click', function())
 
 let playerHealth = 100
 let cpuHealth = 100
@@ -21,11 +26,6 @@ function updateCpuHealth() {
 }
 // Need to alternate turns and ensure Dragonite does not immediately attack after mankey attacks. 
 // Can make an 'a' button to advance text.
-// Create conditional if (turn === 'Dragonite') {
-//     dragoniteAttack()} 
-
-
-
 
 
 // Stretch goal: make an ability that enhances the next turns ability?
@@ -147,12 +147,6 @@ function thunderPunch() {
     defeat() // checks if user HP is 0
     turn = 'Mankey'
 }
-
-// if (turn === 'Dragonite') {
-//     dragoniteAttack()
-// }
-
-
 
 
 //message if player wins
