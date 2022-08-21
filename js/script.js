@@ -4,11 +4,21 @@ const attackTwo = document.querySelector('#attack-two')
 const attackThree = document.querySelector('#attack-three')
 const attackFour = document.querySelector('#attack-four')
 const textBar = document.querySelector('.textbar')
+const cpuHealthBar = document.querySelector('#cpu-health')
+const playerHealthBar = document.querySelector('#user-health')
 
 let playerHealth = 100
 let cpuHealth = 100
 let turn = 'Mankey'
 
+
+function updatePlayerHealth() {
+    playerHealthBar.innerText = playerHealth
+}
+
+function updateCpuHealth() {
+    cpuHealthBar.innerText = cpuHealth
+}
 // Need to alternate turns and ensure Dragonite does not immediately attack after mankey attacks. 
 // Can make an 'a' button to advance text.
 // Create conditional if (turn === 'Dragonite') {
@@ -34,6 +44,7 @@ function lowKick() {
         cpuHealth -= 20
         console.log(`Mankey used Low Kick!`)
         console.log(`Dragonite has ${cpuHealth}hp!`)
+        updateCpuHealth()
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
@@ -48,6 +59,7 @@ function scratch() {
         cpuHealth -= 25
         console.log(`Mankey used Scratch!`)
         console.log(`Dragonite has ${cpuHealth}hp!`)
+        updateCpuHealth()
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
@@ -62,6 +74,7 @@ function closeCombat() {
         cpuHealth -= 30
         console.log(`Mankey used Close Combat!`)
         console.log(`Dragonite has ${cpuHealth}hp!`)
+        updateCpuHealth()
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
@@ -76,6 +89,7 @@ function skullBash() {
         cpuHealth -= 20
         console.log(`Mankey used Skull Bash!`)
         console.log(`Dragonite has ${cpuHealth}hp!`)
+        updateCpuHealth()
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
@@ -96,6 +110,7 @@ function dragoniteAttack() {
         const random = Math.floor(Math.random() * 4);
         cpuAttacks[random]()
         console.log(`Mankey has ${playerHealth}hp!`)
+        updatePlayerHealth()
         if (playerHealth > 0) {
             console.log(`It's ${turn}'s turn to attack!`)
         }
