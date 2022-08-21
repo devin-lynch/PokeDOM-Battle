@@ -10,7 +10,11 @@ const playerHealthBar = document.querySelector('#user-health')
 const aButton = document.querySelector('#a')
 
 // a button to clear text. can then add conditional "if turn = dragonite and text = ""... then allow dragonite to attack"
-// aButton.addEventListener('click', function())
+aButton.addEventListener('click', function() {
+    if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
+        dragoniteAttack()
+    }
+})
 
 let playerHealth = 100
 let cpuHealth = 100
