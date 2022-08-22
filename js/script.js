@@ -3,6 +3,8 @@
 // Make the attacking pokemon do a dash motion
 // Try to add 'critical' attack chance
 // Change hp background-color based on current hp
+// Add play instructions to select button
+// Style buttons to match gameboy buttons (A/B round)
 
 console.log('hello from js')
 const attackOne = document.querySelector('#attack-one')
@@ -47,6 +49,7 @@ aButton.addEventListener('click', function() {
 
 // GAME RESET BUTTON
 startButton.addEventListener('click', function() {
+    text.style.fontSize = '26px'
     userPokemon.style.visibility = 'visible'
     cpuPokemon.style.visibility = 'visible'
     playerHealth = 100
@@ -55,6 +58,11 @@ startButton.addEventListener('click', function() {
     playerHealthBar.innerText = playerHealth
     turn = 'Mankey'
     text.innerText = `You're up first, Mankey! Please select an attack!`
+})
+
+selectButton.addEventListener('click', function () {
+    text.style.fontSize = '22px'
+    text.innerText = `The player goes first! Select one of four attacks. Follow on screen instructions to alternate turns until a victor is declared (a Pokemon reaching 0hp.) Press 'START' to begin!`
 })
 
 
