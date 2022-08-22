@@ -23,10 +23,16 @@ let turn = 'Mankey'
 
 
 function updatePlayerHealth() {
+    if (playerHealth < 0) {
+        playerHealth = 0
+    }
     playerHealthBar.innerText = playerHealth
 }
 
 function updateCpuHealth() {
+    if (cpuHealth < 0) {
+        cpuHealth = 0
+    }
     cpuHealthBar.innerText = cpuHealth
 }
 // Need to alternate turns and ensure Dragonite does not immediately attack after mankey attacks. 
