@@ -44,6 +44,8 @@
     position: absolute;
     top: 10%;
     left: 7%;
+    right: 7%;
+    bottom: 10%;
 }
 
 .attack-selection {
@@ -115,10 +117,6 @@
 #textbar {
     width: 100%;
     height: 100%;
-}
-
-#text {
-    word-wrap: normal;
 }
 
 #battlebar-border {

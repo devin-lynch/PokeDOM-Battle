@@ -23,14 +23,14 @@ let turn = 'Mankey'
 
 
 function updatePlayerHealth() {
-    if (playerHealth < 0) {
+    if (playerHealth < 0) { // makes sure hp does not show a negative amount. 
         playerHealth = 0
     }
     playerHealthBar.innerText = playerHealth
 }
 
 function updateCpuHealth() {
-    if (cpuHealth < 0) {
+    if (cpuHealth < 0) { // makes sure hp does not show a negative amount. 
         cpuHealth = 0
     }
     cpuHealthBar.innerText = cpuHealth
