@@ -2,6 +2,7 @@
 // Make the pokemon that takes damage shake upon receiving damage
 // Make the attacking pokemon do a dash motion
 // Try to add 'critical' attack chance
+// Change hp background-color based on current hp
 
 console.log('hello from js')
 const attackOne = document.querySelector('#attack-one')
@@ -12,13 +13,17 @@ const textBar = document.querySelector('.textbar')
 const text = document.querySelector('#text')
 const cpuHealthBar = document.querySelector('#cpu-health')
 const playerHealthBar = document.querySelector('#user-health')
+const cpuHealthZone = document.querySelector('.cpu-health')
+const playerHealthZone = document.querySelector('.user-health')
 const aButton = document.querySelector('#a')
 const bButton = document.querySelector('#b')
 const startButton = document.querySelector('#start')
 const selectButton = document.querySelector('#select')
 const userPokemon = document.querySelector('#user-pokemon')
 const cpuPokemon = document.querySelector('#cpu-pokemon')
-
+let playerHealth = 100
+let cpuHealth = 100
+let turn = 'Mankey'
 
 function typeWriter() {
     let i = 0
@@ -40,6 +45,7 @@ aButton.addEventListener('click', function() {
      }
 })
 
+// GAME RESET BUTTON
 startButton.addEventListener('click', function() {
     userPokemon.style.visibility = 'visible'
     cpuPokemon.style.visibility = 'visible'
@@ -50,10 +56,6 @@ startButton.addEventListener('click', function() {
     turn = 'Mankey'
     text.innerText = `You're up first, Mankey! Please select an attack!`
 })
-
-let playerHealth = 100
-let cpuHealth = 100
-let turn = 'Mankey'
 
 
 function updatePlayerHealth() {
@@ -211,7 +213,7 @@ function victory() {
         // turn = 'gameOver'
         // typeWriter()
         cpuPokemon.style.visibility = 'hidden' // hides the defeated pokemon
-        text.innerText += ` The wild Dragonite fainted!`
+        text.innerText += ` The wild Dragonite fainted!  Please press 'START' to battle again!`
         console.log(`The wild Dragonite fainted!`)
     }
 }
@@ -224,7 +226,7 @@ function defeat() {
         // typeWriter()
         userPokemon.style.visibility = 'hidden' // hides the defeated pokemon
         text.innerText += ` Your Mankey fainted! You were overwhelmed by your defeat!`
-        console.log(`Your Mankey fainted! You were overwhelmed by your defeat!`)
+        console.log(`Your Mankey fainted! You were overwhelmed by your defeat! Please press 'START' to battle again!`)
     }
 }
 

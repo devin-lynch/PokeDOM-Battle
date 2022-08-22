@@ -23,18 +23,25 @@
     height: 100%;
     width: 100%;
     grid-area: cpu-health;
-    font-size: 60px;
+    font-size: 45px;
     font-weight: 550;
-    /* background-color: beige; */
+    background-color: rgba(102, 232, 102, 0.355);
 }
 
 .user-health {
     height: 100%;
     width: 100%;
     grid-area: user-health;
-    font-size: 60px;
+    font-size: 45px;
     font-weight: 550;
-    /* background-color: blueviolet; */
+    background-color: rgba(102, 232, 102, 0.355);
+}
+test {
+    background-color:rgba(206, 244, 81, 0.355);
+    background-color: rgba(240, 31, 12, 0.355)
+}
+.pokemon-name {
+    font-size: 24px;
 }
 
 /* .user-health, .cpu-health, .user-pokemon, .cpu-pokemon {
