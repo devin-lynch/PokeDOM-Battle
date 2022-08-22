@@ -21,12 +21,16 @@
 
 .cpu-health {
     grid-area: cpu-health;
-    background-color: beige;
+    font-size: 60px;
+    font-weight: 550;
+    /* background-color: beige; */
 }
 
 .user-health {
     grid-area: user-health;
-    background-color: blueviolet;
+    font-size: 60px;
+    font-weight: 550;
+    /* background-color: blueviolet; */
 }
 
 .user-pokemon {
@@ -46,6 +50,9 @@
     left: 7%;
     right: 7%;
     bottom: 10%;
+    font-size: 26px;
+    font-weight: 400;
+    text-align: center;
     
 
 }
