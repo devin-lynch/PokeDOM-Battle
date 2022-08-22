@@ -66,8 +66,8 @@ function lowKick() {
         cpuHealth -= 20
         console.log(`Mankey used Low Kick!`)
         console.log(`Dragonite has ${cpuHealth}hp!`)
-        text.innerText = `Mankey used Low Kick! Dragonite has ${cpuHealth}hp!`
         updateCpuHealth()
+        text.innerText = `Mankey used Low Kick! Dragonite has ${cpuHealth}hp!`
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
@@ -82,8 +82,8 @@ function scratch() {
         cpuHealth -= 25
         console.log(`Mankey used Scratch!`)
         console.log(`Dragonite has ${cpuHealth}hp!`)
-        text.innerText = `Mankey used Scratch! Dragonite has ${cpuHealth}hp!`
         updateCpuHealth()
+        text.innerText = `Mankey used Scratch! Dragonite has ${cpuHealth}hp!`
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
@@ -98,8 +98,8 @@ function closeCombat() {
         cpuHealth -= 30
         console.log(`Mankey used Close Combat!`)
         console.log(`Dragonite has ${cpuHealth}hp!`)
-        text.innerText = `Mankey used Close Combat! Dragonite has ${cpuHealth}hp!`
         updateCpuHealth()
+        text.innerText = `Mankey used Close Combat! Dragonite has ${cpuHealth}hp!`
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
@@ -114,8 +114,8 @@ function skullBash() {
         cpuHealth -= 20
         console.log(`Mankey used Skull Bash!`)
         console.log(`Dragonite has ${cpuHealth}hp!`)
-        text.innerText = `Mankey used Skull Bash! Dragonite has ${cpuHealth}hp!`
         updateCpuHealth()
+        text.innerText = `Mankey used Skull Bash! Dragonite has ${cpuHealth}hp!`
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
@@ -186,7 +186,7 @@ function victory() {
     // Ensure you can't continue attacking after victory
     if (cpuHealth <= 0) { 
         // typeWriter()
-        text.innerText += `The wild Dragonite fainted!`
+        text.innerText += ` The wild Dragonite fainted!`
         console.log(`The wild Dragonite fainted!`)
     }
 }
