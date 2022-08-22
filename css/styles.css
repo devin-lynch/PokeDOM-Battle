@@ -67,7 +67,7 @@
     background-color: antiquewhite;
 }
 
-/* NESTED GRID */
+/*----------------- NESTED GRID ---------------*/
 .battlebar {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -113,18 +113,11 @@
     /* width: 100%; */
 }
 
-.button {
-    height: 40px;
-    width: 100%;
-}
-
-
 /* --------------------------------------- */
 
 #cpu-pokemon {
     height: 300px;
-    ;
-    
+    float: right;
 }
 
 #user-pokemon {
@@ -155,4 +148,8 @@
 .hp {
     text-align: center;
     margin: auto
+}
+
+#gameboy-buttons {
+    text-align: center;
 }

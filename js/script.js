@@ -11,6 +11,8 @@ const aButton = document.querySelector('#a')
 const bButton = document.querySelector('#b')
 const startButton = document.querySelector('#start')
 const selectButton = document.querySelector('#select')
+const userPokemon = document.querySelector('#user-pokemon')
+const cpuPokemon = document.querySelector('#cpu-pokemon')
 
 
 function typeWriter() {
@@ -192,6 +194,7 @@ function victory() {
     if (cpuHealth <= 0) { 
         // turn = 'gameOver'
         // typeWriter()
+        cpuPokemon.style.display = 'none' // hides the defeated pokemon
         text.innerText += ` The wild Dragonite fainted!`
         console.log(`The wild Dragonite fainted!`)
     }
@@ -203,6 +206,7 @@ function defeat() {
     if (playerHealth <= 0) {
         // turn = 'gameOver'
         // typeWriter()
+        userPokemon.style.display = 'none' // hides the defeated pokemon
         text.innerText += ` Your Mankey fainted! You were overwhelmed by your defeat!`
         console.log(`Your Mankey fainted! You were overwhelmed by your defeat!`)
     }
