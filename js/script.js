@@ -9,6 +9,17 @@ const cpuHealthBar = document.querySelector('#cpu-health')
 const playerHealthBar = document.querySelector('#user-health')
 const aButton = document.querySelector('#a')
 
+
+function typeWriter() {
+    let i = 0
+    let speed = 50
+    if (i < text.innerText.length) {
+        text.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed)
+    }
+}
+
 // a button to clear text. can then add conditional "if turn = dragonite and text = ""... then allow dragonite to attack"
 // need to add prompt to tell player to press a button so that dragonite can attack. 
 aButton.addEventListener('click', function() {
@@ -55,11 +66,13 @@ function lowKick() {
         cpuHealth -= 20
         console.log(`Mankey used Low Kick!`)
         console.log(`Dragonite has ${cpuHealth}hp!`)
+        text.innerText = `Mankey used Low Kick! Dragonite has ${cpuHealth}hp!`
         updateCpuHealth()
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
             console.log(`It's ${turn}'s turn to attack!`)
+            text.innerText += ` It's ${turn}'s turn to attack! Press 'A' to continue!`
         }
     }
 }
@@ -69,11 +82,13 @@ function scratch() {
         cpuHealth -= 25
         console.log(`Mankey used Scratch!`)
         console.log(`Dragonite has ${cpuHealth}hp!`)
+        text.innerText = `Mankey used Scratch! Dragonite has ${cpuHealth}hp!`
         updateCpuHealth()
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
             console.log(`It's ${turn}'s turn to attack!`)
+            text.innerText += ` It's ${turn}'s turn to attack! Press 'A' to continue!`
         }
     }
 }
@@ -83,11 +98,13 @@ function closeCombat() {
         cpuHealth -= 30
         console.log(`Mankey used Close Combat!`)
         console.log(`Dragonite has ${cpuHealth}hp!`)
+        text.innerText = `Mankey used Close Combat! Dragonite has ${cpuHealth}hp!`
         updateCpuHealth()
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
             console.log(`It's ${turn}'s turn to attack!`)
+            text.innerText += ` It's ${turn}'s turn to attack! Press 'A' to continue!`
         }
     }
 }
@@ -97,11 +114,13 @@ function skullBash() {
         cpuHealth -= 20
         console.log(`Mankey used Skull Bash!`)
         console.log(`Dragonite has ${cpuHealth}hp!`)
+        text.innerText = `Mankey used Skull Bash! Dragonite has ${cpuHealth}hp!`
         updateCpuHealth()
         victory() // checks if cpu HP is 0
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
             console.log(`It's ${turn}'s turn to attack!`)
+            text.innerText += ` It's ${turn}'s turn to attack! Press 'A' to continue!`
         }
     }
 }
@@ -119,7 +138,9 @@ function dragoniteAttack() {
         console.log(`Mankey has ${playerHealth}hp!`)
         updatePlayerHealth()
         if (playerHealth > 0) {
+            text.innerText += ` Mankey has ${playerHealth}hp!`
             console.log(`It's ${turn}'s turn to attack!`)
+            text.innerText += ` It's ${turn}'s turn to attack! Please select an attack!`
         }
         // console.log(cpuAttacks[random])
     }
@@ -130,6 +151,7 @@ function dragoniteAttack() {
 function hyperBeam() {
     playerHealth -= 25
     console.log(`The wild Dragonite used Hyper Beam!`)
+    text.innerText = `The wild Dragonite used Hyper Beam!`
     defeat() // checks if user HP is 0
     turn = 'Mankey'
 }
@@ -137,6 +159,7 @@ function hyperBeam() {
 function dragonRush() {
     playerHealth -= 20
     console.log(`The wild Dragonite used Dragon Rush!`)
+    text.innerText = `The wild Dragonite used Dragon Rush!`
     defeat() // checks if user HP is 0
     turn = 'Mankey'
 }
@@ -144,6 +167,7 @@ function dragonRush() {
 function hurricane() {
     playerHealth -= 35
     console.log(`The wild Dragonite used Hurricane!`)
+    text.innerText = `The wild Dragonite used Hurricane!`
     defeat() // checks if user HP is 0
     turn = 'Mankey'
 }
@@ -151,6 +175,7 @@ function hurricane() {
 function thunderPunch() {
     playerHealth -= 20
     console.log(`The wild Dragonite used Thunder Punch!`)
+    text.innerText = `The wild Dragonite used Thunder Punch!`
     defeat() // checks if user HP is 0
     turn = 'Mankey'
 }
@@ -160,6 +185,8 @@ function thunderPunch() {
 function victory() {
     // Ensure you can't continue attacking after victory
     if (cpuHealth <= 0) { 
+        // typeWriter()
+        text.innerText += `The wild Dragonite fainted!`
         console.log(`The wild Dragonite fainted!`)
     }
 }
@@ -168,6 +195,8 @@ function victory() {
 function defeat() {
     // Ensure you can't continue attacking after defeat
     if (playerHealth <= 0) {
+        // typeWriter()
+        text.innerText += ` Your Mankey fainted! You were overwhelmed by your defeat!`
         console.log(`Your Mankey fainted! You were overwhelmed by your defeat!`)
     }
 }
