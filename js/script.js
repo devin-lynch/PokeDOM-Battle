@@ -45,6 +45,9 @@ startButton.addEventListener('click', function() {
     cpuPokemon.style.visibility = 'visible'
     playerHealth = 100
     cpuHealth = 100
+    cpuHealthBar.innerText = cpuHealth
+    playerHealthBar.innerText = playerHealth
+    turn = 'Mankey'
     text.innerText = `You're up first, Mankey! Please select an attack!`
 })
 
