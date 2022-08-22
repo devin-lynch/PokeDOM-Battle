@@ -10,6 +10,7 @@ const playerHealthBar = document.querySelector('#user-health')
 const aButton = document.querySelector('#a')
 
 // a button to clear text. can then add conditional "if turn = dragonite and text = ""... then allow dragonite to attack"
+// need to add prompt to tell player to press a button so that dragonite can attack. 
 aButton.addEventListener('click', function() {
     if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
         dragoniteAttack()
@@ -53,7 +54,6 @@ function lowKick() {
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
             console.log(`It's ${turn}'s turn to attack!`)
-            dragoniteAttack()
         }
     }
 }
@@ -68,7 +68,6 @@ function scratch() {
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
             console.log(`It's ${turn}'s turn to attack!`)
-            dragoniteAttack()
         }
     }
 }
@@ -83,7 +82,6 @@ function closeCombat() {
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
             console.log(`It's ${turn}'s turn to attack!`)
-            dragoniteAttack()
         }
     }
 }
@@ -98,7 +96,6 @@ function skullBash() {
         turn = 'Dragonite'
         if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
             console.log(`It's ${turn}'s turn to attack!`)
-            dragoniteAttack()
         }
     }
 }

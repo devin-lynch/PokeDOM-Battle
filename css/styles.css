@@ -118,7 +118,7 @@
 }
 
 #text {
-    
+    word-wrap: normal;
 }
 
 #battlebar-border {
