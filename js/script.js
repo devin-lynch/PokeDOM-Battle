@@ -8,6 +8,9 @@ const text = document.querySelector('#text')
 const cpuHealthBar = document.querySelector('#cpu-health')
 const playerHealthBar = document.querySelector('#user-health')
 const aButton = document.querySelector('#a')
+const bButton = document.querySelector('#b')
+const startButton = document.querySelector('#start')
+const selectButton = document.querySelector('#select')
 
 
 function typeWriter() {
@@ -25,7 +28,9 @@ function typeWriter() {
 aButton.addEventListener('click', function() {
     if (turn === 'Dragonite' && playerHealth > 0 && cpuHealth > 0) {
         dragoniteAttack()
-    }
+    // } else if (turn === gameOver) {
+
+     }
 })
 
 let playerHealth = 100
@@ -185,6 +190,7 @@ function thunderPunch() {
 function victory() {
     // Ensure you can't continue attacking after victory
     if (cpuHealth <= 0) { 
+        // turn = 'gameOver'
         // typeWriter()
         text.innerText += ` The wild Dragonite fainted!`
         console.log(`The wild Dragonite fainted!`)
@@ -195,6 +201,7 @@ function victory() {
 function defeat() {
     // Ensure you can't continue attacking after defeat
     if (playerHealth <= 0) {
+        // turn = 'gameOver'
         // typeWriter()
         text.innerText += ` Your Mankey fainted! You were overwhelmed by your defeat!`
         console.log(`Your Mankey fainted! You were overwhelmed by your defeat!`)
