@@ -25,7 +25,7 @@ const userPokemon = document.querySelector('#user-pokemon')
 const cpuPokemon = document.querySelector('#cpu-pokemon')
 let playerHealth = 100
 let cpuHealth = 100
-let turn = 'Mankey'
+let turn //= 'Mankey'
 
 function typeWriter() {
     let i = 0
