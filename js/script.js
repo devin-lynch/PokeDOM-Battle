@@ -1,3 +1,8 @@
+// TODO
+// Make the pokemon that takes damage shake upon receiving damage
+// Make the attacking pokemon do a dash motion
+// Try to add 'critical' attack chance
+
 console.log('hello from js')
 const attackOne = document.querySelector('#attack-one')
 const attackTwo = document.querySelector('#attack-two')
@@ -33,6 +38,14 @@ aButton.addEventListener('click', function() {
     // } else if (turn === gameOver) {
 
      }
+})
+
+startButton.addEventListener('click', function() {
+    userPokemon.style.visibility = 'visible'
+    cpuPokemon.style.visibility = 'visible'
+    playerHealth = 100
+    cpuHealth = 100
+    text.innerText = `You're up first, Mankey! Please select an attack!`
 })
 
 let playerHealth = 100
@@ -194,7 +207,7 @@ function victory() {
     if (cpuHealth <= 0) { 
         // turn = 'gameOver'
         // typeWriter()
-        cpuPokemon.style.display = 'none' // hides the defeated pokemon
+        cpuPokemon.style.visibility = 'hidden' // hides the defeated pokemon
         text.innerText += ` The wild Dragonite fainted!`
         console.log(`The wild Dragonite fainted!`)
     }
@@ -206,7 +219,7 @@ function defeat() {
     if (playerHealth <= 0) {
         // turn = 'gameOver'
         // typeWriter()
-        userPokemon.style.display = 'none' // hides the defeated pokemon
+        userPokemon.style.visibility = 'hidden' // hides the defeated pokemon
         text.innerText += ` Your Mankey fainted! You were overwhelmed by your defeat!`
         console.log(`Your Mankey fainted! You were overwhelmed by your defeat!`)
     }

@@ -20,6 +20,8 @@
 }
 
 .cpu-health {
+    height: 100%;
+    width: 100%;
     grid-area: cpu-health;
     font-size: 60px;
     font-weight: 550;
@@ -27,6 +29,8 @@
 }
 
 .user-health {
+    height: 100%;
+    width: 100%;
     grid-area: user-health;
     font-size: 60px;
     font-weight: 550;
@@ -82,7 +86,6 @@
     position: absolute;
     bottom: 100px;
     left: 10%;
-    
     width: 100%;
     
 }
