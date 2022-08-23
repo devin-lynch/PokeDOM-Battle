@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'PokemonGb';
+    src: url('PokemonGb-RAeo.ttf');
+}
+
 /* MAIN GRID */
 .grid-container {
     /* background-color: antiquewhite; */
@@ -36,10 +41,12 @@
     font-weight: 550;
     background-color: rgba(102, 232, 102, 0.355);
 }
+
 test {
     background-color:rgba(206, 244, 81, 0.355);
     background-color: rgba(240, 31, 12, 0.355)
 }
+
 .pokemon-name {
     font-size: 24px;
 }
