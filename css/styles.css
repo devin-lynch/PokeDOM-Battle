@@ -1,7 +1,12 @@
 @font-face {
-    font-family: 'PokemonGb';
+    font-family: PokemonGb;
     src: url('PokemonGb-RAeo.ttf');
 }
+
+body {
+    font-family: PokemonGb;
+}
+
 
 /* MAIN GRID */
 .grid-container {
