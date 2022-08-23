@@ -159,7 +159,8 @@ test {
 
 .button {
     /* position: relative; */
-    font-size: 26px;
+    font-family: PokemonGb;
+    font-size: 22px;
     height: 60px;
     width: 260px;
     text-align: center;
