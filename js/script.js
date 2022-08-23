@@ -61,6 +61,7 @@ startButton.addEventListener('click', function() {
 })
 
 selectButton.addEventListener('click', function () {
+    // typeWriter()
     text.style.fontSize = '22px'
     text.innerText = `The player goes first! Select one of four attacks. Follow on screen instructions to alternate turns until a victor is declared (a Pokemon reaching 0hp.) Press 'START' to begin!`
 })
@@ -178,7 +179,6 @@ function dragoniteAttack() {
         // console.log(cpuAttacks[random])
     }
 } 
-
 
 
 function hyperBeam() {
