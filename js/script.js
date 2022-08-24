@@ -73,9 +73,9 @@ function updatePlayerHealth() {
     }
 
     if (playerHealth > 50) {
-        playerHealthZone.style.backgroundColor = 'rgba(102, 232, 102, 0.355)'
+        playerHealthZone.style.backgroundColor = 'rgba(49, 228, 49, 0.355)'
     } else if (playerHealth > 20) {
-        playerHealthZone.style.backgroundColor = 'rgba(206, 244, 81, 0.355)'
+        playerHealthZone.style.backgroundColor = 'rgba(207, 253, 0, 0.662)'
     } else {
         playerHealthZone.style.backgroundColor = 'rgba(240, 31, 12, 0.355)'
     }
@@ -88,9 +88,9 @@ function updateCpuHealth() {
     }
 
     if (cpuHealth > 50) {
-        cpuHealthZone.style.backgroundColor = 'rgba(102, 232, 102, 0.355)'
+        cpuHealthZone.style.backgroundColor = 'rgba(49, 228, 49, 0.355)'
     } else if (cpuHealth > 20) {
-        cpuHealthZone.style.backgroundColor = 'rgba(206, 244, 81, 0.355)'
+        cpuHealthZone.style.backgroundColor = 'rgba(207, 253, 0, 0.662)'
     } else {
         cpuHealthZone.style.backgroundColor = 'rgba(240, 31, 12, 0.355)'
     }
