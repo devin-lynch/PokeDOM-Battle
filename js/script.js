@@ -3,8 +3,7 @@
 // Make the attacking pokemon do a dash motion
 // Try to add 'critical' attack chance
 // Change hp background-color based on current hp
-// Add play instructions to select button
-// Style buttons to match gameboy buttons (A/B round)
+// Add '>' to button on hover?
 
 console.log('hello from js')
 const attackOne = document.querySelector('#attack-one')
@@ -30,20 +29,19 @@ let turn //= 'MANKEY'
 function typeWriter() {
     let i = 0
     let speed = 50
-    if (i < text.innerText.length) {
+    if (i < text.length) {
         text.textContent += text.charAt(i);
         i++;
         setTimeout(typeWriter, speed)
     }
 }
+// typeWriter()
 
 // a button to clear text. can then add conditional "if turn = DRAGONITE and text = ""... then allow DRAGONITE to attack"
 // need to add prompt to tell player to press a button so that DRAGONITE can attack. 
 aButton.addEventListener('click', function() {
     if (turn === 'DRAGONITE' && playerHealth > 0 && cpuHealth > 0) {
         dragoniteAttack()
-    // } else if (turn === gameOver) {
-
      }
 })
 
@@ -54,6 +52,8 @@ startButton.addEventListener('click', function() {
     cpuPokemon.style.visibility = 'visible'
     playerHealth = 100
     cpuHealth = 100
+    updatePlayerHealth()
+    updateCpuHealth()
     cpuHealthBar.innerText = cpuHealth
     playerHealthBar.innerText = playerHealth
     turn = 'MANKEY'
@@ -71,12 +71,28 @@ function updatePlayerHealth() {
     if (playerHealth < 0) { // makes sure hp does not show a negative amount. 
         playerHealth = 0
     }
+
+    if (playerHealth > 50) {
+        playerHealthZone.style.backgroundColor = 'rgba(102, 232, 102, 0.355)'
+    } else if (playerHealth > 20) {
+        playerHealthZone.style.backgroundColor = 'rgba(206, 244, 81, 0.355)'
+    } else {
+        playerHealthZone.style.backgroundColor = 'rgba(240, 31, 12, 0.355)'
+    }
     playerHealthBar.innerText = playerHealth
 }
 
 function updateCpuHealth() {
     if (cpuHealth < 0) { // makes sure hp does not show a negative amount. 
         cpuHealth = 0
+    }
+
+    if (cpuHealth > 50) {
+        cpuHealthZone.style.backgroundColor = 'rgba(102, 232, 102, 0.355)'
+    } else if (cpuHealth > 20) {
+        cpuHealthZone.style.backgroundColor = 'rgba(206, 244, 81, 0.355)'
+    } else {
+        cpuHealthZone.style.backgroundColor = 'rgba(240, 31, 12, 0.355)'
     }
     cpuHealthBar.innerText = cpuHealth
 }
