@@ -282,7 +282,9 @@ function userAttackAnimation() {
 }
 function userAttackResetAnimation() {
     userPokemon.style.float = 'left'
-    cpuPokemon.style.visibility = 'visible'
+    if (cpuHealth > 0) {
+        cpuPokemon.style.visibility = 'visible'
+    }
 }
 
 function userAnimation() {
@@ -297,7 +299,9 @@ function cpuAttackAnimation() {
 
 function cpuAttackResetAnimation() {
     cpuPokemon.style.float = 'right'
-    userPokemon.style.visibility = 'visible'
+    if (playerHealth > 0) {
+        userPokemon.style.visibility = 'visible'
+    }
 }
 
 function cpuAnimation() {
