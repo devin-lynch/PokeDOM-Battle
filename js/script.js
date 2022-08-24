@@ -34,7 +34,6 @@ function typeWriter() {
         setTimeout(typeWriter, speed)
     }
 }
-// typeWriter()
 
 // -----Advance turn and DRAGONITE attack-----
 aButton.addEventListener('click', function() {
@@ -58,6 +57,7 @@ startButton.addEventListener('click', function() {
     typeWriter()
     text.innerText = `You're up first, MANKEY! Please select an attack!`
 })
+
 // -----Instructions-----
 selectButton.addEventListener('click', function () {
     // typeWriter()
@@ -95,11 +95,6 @@ function updateCpuHealth() {
     }
     cpuHealthBar.innerText = cpuHealth
 }
-// Need to alternate turns and ensure DRAGONITE does not immediately attack after MANKEY attacks. 
-// Can make an 'a' button to advance text.
-
-
-// Stretch goal: make an ability that enhances the next turns ability?
 
 // -----Attack buttons-----
 attackOne.addEventListener('click', lowKick)
@@ -107,7 +102,8 @@ attackTwo.addEventListener('click', scratch)
 attackThree.addEventListener('click', closeCombat)
 attackFour.addEventListener('click', skullBash)
 
-// damage is undefined and is not making damage * 2. 
+// // -----Critical attack function-----
+// // damage is undefined and is not making damage * 2. 
 // function criticalAttack() {
 //     const random = Math.floor(Math.random() * 5)
 //     let damage
