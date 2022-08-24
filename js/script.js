@@ -2,7 +2,6 @@
 // Make the pokemon that takes damage shake upon receiving damage
 // Make the attacking pokemon do a dash motion
 // Try to add 'critical' attack chance
-// Change hp background-color based on current hp
 // Add '>' to button on hover?
 
 console.log('hello from js')
@@ -71,7 +70,7 @@ function updatePlayerHealth() {
     if (playerHealth < 0) { // makes sure hp does not show a negative amount. 
         playerHealth = 0
     }
-
+    // changes health color depending on current hp
     if (playerHealth > 50) {
         playerHealthZone.style.backgroundColor = 'rgba(49, 228, 49, 0.355)'
     } else if (playerHealth > 20) {
@@ -86,7 +85,7 @@ function updateCpuHealth() {
     if (cpuHealth < 0) { // makes sure hp does not show a negative amount. 
         cpuHealth = 0
     }
-
+    // changes health color depending on current hp
     if (cpuHealth > 50) {
         cpuHealthZone.style.backgroundColor = 'rgba(49, 228, 49, 0.355)'
     } else if (cpuHealth > 20) {
@@ -108,12 +107,22 @@ attackTwo.addEventListener('click', scratch)
 attackThree.addEventListener('click', closeCombat)
 attackFour.addEventListener('click', skullBash)
 
-// Need to stop console logging turn if a pokemon has fainted
+function criticalAttack() {
+    const random = Math.floor(Math.random() * 5)
+    let damage
+    console.log(random)
+    if (random === 4) {
+        damage *= 2
+    }
+}
+
 
 // MANKEY moves
 function lowKick() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
-        cpuHealth -= 20
+        let damage = 20
+        criticalAttack()
+        cpuHealth -= damage
         console.log(`MANKEY used Low Kick!`)
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
         updateCpuHealth()
@@ -129,7 +138,8 @@ function lowKick() {
 
 function scratch() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
-        cpuHealth -= 25
+        let damage = 25
+        cpuHealth -= damage
         console.log(`MANKEY used Scratch!`)
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
         updateCpuHealth()
@@ -145,7 +155,8 @@ function scratch() {
 
 function closeCombat() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
-        cpuHealth -= 30
+        let damage = 30
+        cpuHealth -= damage
         console.log(`MANKEY used Close Combat!`)
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
         updateCpuHealth()
@@ -161,7 +172,8 @@ function closeCombat() {
 
 function skullBash() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
-        cpuHealth -= 20
+        let damage = 20
+        cpuHealth -= damage
         console.log(`MANKEY used Skull Bash!`)
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
         updateCpuHealth()
