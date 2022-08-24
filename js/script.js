@@ -1,9 +1,9 @@
-// TODO
-// Make the pokemon that takes damage shake upon receiving damage
-// Make the attacking pokemon do a dash motion
+// -----TODO-----
+// Make the pokemon that takes damage shake/flash upon receiving damage?
 // Try to add 'critical' attack chance
 // Add '>' to button on hover?
-
+// REFACTOR!
+// -----------------------------
 console.log('hello from js')
 const attackOne = document.querySelector('#attack-one')
 const attackTwo = document.querySelector('#attack-two')
@@ -56,6 +56,7 @@ startButton.addEventListener('click', function() {
     cpuHealthBar.innerText = cpuHealth
     playerHealthBar.innerText = playerHealth
     turn = 'MANKEY'
+    typeWriter()
     text.innerText = `You're up first, MANKEY! Please select an attack!`
 })
 
@@ -277,9 +278,11 @@ function thunderPunch() {
 
 function userAttackAnimation() {
     userPokemon.style.float = 'right'
+    cpuPokemon.style.visibility = 'hidden'
 }
 function userAttackResetAnimation() {
     userPokemon.style.float = 'left'
+    cpuPokemon.style.visibility = 'visible'
 }
 
 function userAnimation() {
@@ -289,10 +292,12 @@ function userAnimation() {
 
 function cpuAttackAnimation() {
     cpuPokemon.style.float = 'left'
+    userPokemon.style.visibility = 'hidden'
 }
 
 function cpuAttackResetAnimation() {
     cpuPokemon.style.float = 'right'
+    userPokemon.style.visibility = 'visible'
 }
 
 function cpuAnimation() {
@@ -324,7 +329,7 @@ function defeat() {
         // turn = 'gameOver'
         // typeWriter()
         userPokemon.style.visibility = 'hidden' // hides the defeated pokemon
-        text.innerText += ` Your MANKEY fainted! You were overwhelmed by your defeat!`
+        text.innerText += ` Your MANKEY fainted! You were overwhelmed by your defeat! Please press 'START' to battle again!`
         console.log(`Your MANKEY fainted! You were overwhelmed by your defeat! Please press 'START' to battle again!`)
     }
 }
