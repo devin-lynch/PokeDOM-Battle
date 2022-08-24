@@ -245,7 +245,7 @@ function hurricane() {
 }
 
 function thunderPunch() {
-    let damage = 20
+    let damage = 25
     playerHealth -= damage
     console.log(`The wild DRAGONITE used Thunder Punch!`)
     text.innerText = `The wild DRAGONITE used Thunder Punch!`
@@ -284,7 +284,7 @@ function userAttackResetAnimation() {
 
 function userAnimation() {
     userAttackAnimation()
-    setTimeout(userAttackResetAnimation, 200)
+    setTimeout(userAttackResetAnimation, 100)
 }
 
 function cpuAttackAnimation() {
@@ -297,8 +297,12 @@ function cpuAttackResetAnimation() {
 
 function cpuAnimation() {
     cpuAttackAnimation()
-    setTimeout(cpuAttackResetAnimation, 200)
+    setTimeout(cpuAttackResetAnimation, 100)
 }
+
+// function attackAnimation(pokemon) {
+//     pokemon.style.float = 
+// }
 
 
 //message if player wins
