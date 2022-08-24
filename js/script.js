@@ -107,27 +107,31 @@ attackTwo.addEventListener('click', scratch)
 attackThree.addEventListener('click', closeCombat)
 attackFour.addEventListener('click', skullBash)
 
-function criticalAttack() {
-    const random = Math.floor(Math.random() * 5)
-    let damage
-    console.log(random)
-    if (random === 4) {
-        damage *= 2
-    }
-}
+// damage is undefined and is not making damage * 2. 
+// function criticalAttack() {
+//     const random = Math.floor(Math.random() * 5)
+//     let damage
+//     console.log(random)
+//     if (random === 4) {
+//         damage *= 2
+//     }
+// }
 
 
 // MANKEY moves
 function lowKick() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
         let damage = 20
-        criticalAttack()
+        // criticalAttack()
         cpuHealth -= damage
         console.log(`MANKEY used Low Kick!`)
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
         updateCpuHealth()
         text.innerText = `MANKEY used Low Kick! DRAGONITE has ${cpuHealth}hp!`
+        // userAttackAnimation()
+        userAnimation()
         victory() // checks if cpu HP is 0
+        // cpuTakeDamage()
         turn = 'DRAGONITE'
         if (turn === 'DRAGONITE' && playerHealth > 0 && cpuHealth > 0) {
             console.log(`It's ${turn}'s turn to attack!`)
@@ -144,6 +148,7 @@ function scratch() {
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
         updateCpuHealth()
         text.innerText = `MANKEY used Scratch! DRAGONITE has ${cpuHealth}hp!`
+        userAnimation()
         victory() // checks if cpu HP is 0
         turn = 'DRAGONITE'
         if (turn === 'DRAGONITE' && playerHealth > 0 && cpuHealth > 0) {
@@ -161,6 +166,7 @@ function closeCombat() {
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
         updateCpuHealth()
         text.innerText = `MANKEY used Close Combat! DRAGONITE has ${cpuHealth}hp!`
+        userAnimation()
         victory() // checks if cpu HP is 0
         turn = 'DRAGONITE'
         if (turn === 'DRAGONITE' && playerHealth > 0 && cpuHealth > 0) {
@@ -178,6 +184,7 @@ function skullBash() {
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
         updateCpuHealth()
         text.innerText = `MANKEY used Skull Bash! DRAGONITE has ${cpuHealth}hp!`
+        userAnimation()
         victory() // checks if cpu HP is 0
         turn = 'DRAGONITE'
         if (turn === 'DRAGONITE' && playerHealth > 0 && cpuHealth > 0) {
@@ -198,6 +205,7 @@ function dragoniteAttack() {
         const random = Math.floor(Math.random() * 4);
         cpuAttacks[random]()
         console.log(`MANKEY has ${playerHealth}hp!`)
+        cpuAnimation()
         updatePlayerHealth()
         if (playerHealth > 0) {
             text.innerText += ` MANKEY has ${playerHealth}hp!`
@@ -210,7 +218,8 @@ function dragoniteAttack() {
 
 
 function hyperBeam() {
-    playerHealth -= 25
+    let damage = 25
+    playerHealth -= damage
     console.log(`The wild DRAGONITE used Hyper Beam!`)
     text.innerText = `The wild DRAGONITE used Hyper Beam!`
     defeat() // checks if user HP is 0
@@ -218,7 +227,8 @@ function hyperBeam() {
 }
 
 function dragonRush() {
-    playerHealth -= 20
+    let damage = 20
+    playerHealth -= damage
     console.log(`The wild DRAGONITE used Dragon Rush!`)
     text.innerText = `The wild DRAGONITE used Dragon Rush!`
     defeat() // checks if user HP is 0
@@ -226,7 +236,8 @@ function dragonRush() {
 }
 
 function hurricane() {
-    playerHealth -= 35
+    let damage = 35
+    playerHealth -= damage
     console.log(`The wild DRAGONITE used Hurricane!`)
     text.innerText = `The wild DRAGONITE used Hurricane!`
     defeat() // checks if user HP is 0
@@ -234,11 +245,59 @@ function hurricane() {
 }
 
 function thunderPunch() {
-    playerHealth -= 20
+    let damage = 20
+    playerHealth -= damage
     console.log(`The wild DRAGONITE used Thunder Punch!`)
     text.innerText = `The wild DRAGONITE used Thunder Punch!`
     defeat() // checks if user HP is 0
     turn = 'MANKEY'
+}
+
+// function cpuTakeDamage() {
+//     shake =
+//         0% { transform: translate(1px, 1px) rotate(0deg); }
+//         10% { transform: translate(-1px, -2px) rotate(-1deg); }
+//         20% { transform: translate(-3px, 0px) rotate(1deg); }
+//         30% { transform: translate(3px, 2px) rotate(0deg); }
+//         40% { transform: translate(1px, -1px) rotate(1deg); }
+//         50% { transform: translate(-1px, 2px) rotate(-1deg); }
+//         60% { transform: translate(-3px, 1px) rotate(0deg); }
+//         70% { transform: translate(3px, 1px) rotate(-1deg); }
+//         80% { transform: translate(-1px, -1px) rotate(1deg); }
+//         90% { transform: translate(1px, 2px) rotate(0deg); }
+//         100% { transform: translate(1px, -2px) rotate(-1deg); }
+      
+//     cpuPokemon.style.animation = shake  0.5s
+// }
+
+// function playerTakeDamage() {
+//     userPokemon.style.animation = shake  0.5s
+// }
+
+
+function userAttackAnimation() {
+    userPokemon.style.float = 'right'
+}
+function userAttackResetAnimation() {
+    userPokemon.style.float = 'left'
+}
+
+function userAnimation() {
+    userAttackAnimation()
+    setTimeout(userAttackResetAnimation, 200)
+}
+
+function cpuAttackAnimation() {
+    cpuPokemon.style.float = 'left'
+}
+
+function cpuAttackResetAnimation() {
+    cpuPokemon.style.float = 'right'
+}
+
+function cpuAnimation() {
+    cpuAttackAnimation()
+    setTimeout(cpuAttackResetAnimation, 200)
 }
 
 
