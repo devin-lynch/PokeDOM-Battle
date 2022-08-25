@@ -24,6 +24,15 @@ const cpuPokemon = document.querySelector('#cpu-pokemon')
 let playerHealth = 100
 let cpuHealth = 100
 let turn //= 'MANKEY'
+let hyperBeamAudio = new Audio ('./media/HyperBeam.wav')
+let hurricaneAudio = new Audio ('./media/Hurricane.wav')
+let dragonRushAudio = new Audio ('./media/DragonRush.wav')
+let thunderPunchAudio = new Audio ('./media/ThunderPunch.wav')
+let lowKickAudio = new Audio ('./media/LowKick.wav')
+let scratchAudio = new Audio ('./media/Scratch.wav')
+let skullBashAudio = new Audio ('./media/SkullBash.wav')
+let closeCombatAudio =  new Audio ('./media/CloseCombat.wav')
+
 
 // -----Typewriter text effect-----
 // function typeWriter() {
@@ -103,24 +112,23 @@ attackTwo.addEventListener('click', scratch)
 attackThree.addEventListener('click', closeCombat)
 attackFour.addEventListener('click', skullBash)
 
-// // -----Critical attack function-----
-// // damage is undefined and is not making damage * 2. Remove multiplier and have crit function do same attack as orig to create double amount
-// function criticalAttack(dmg) {
-//     const random = Math.floor(Math.random() * 5)
-//     let damage = dmg
-//     console.log(random)
-//     if (random === 4) {
-//         cpuHealth -= damage
-//         console.log(damage)
-//         console.log(`A critical hit! `)
-//     }
-// }
+// -----Critical attack function-----
+// damage is undefined and is not making damage * 2. Remove multiplier and have crit function do same attack as orig to create double amount
+function rollForCrit(damageValue) {
+    const random = Math.floor(Math.random() * 5)
+    console.log(random)
+    if (random === 4) {
+        damage = damageValue * 2
+        console.log(`A critical hit! `)
+    }
+}
 
 // -----MANKEY moves-----
 function lowKick() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
+        lowKickAudio.play()
         let damage = 20
-        // criticalAttack(20)
+        rollForCrit(20)
         cpuHealth -= damage
         updateCpuHealth()
         text.innerText = `MANKEY used Low Kick! DRAGONITE has ${cpuHealth}hp!`
@@ -135,6 +143,7 @@ function lowKick() {
 
 function scratch() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
+        scratchAudio.play()
         let damage = 25
         // criticalAttack(25)
         cpuHealth -= damage
@@ -151,6 +160,7 @@ function scratch() {
 
 function closeCombat() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
+        closeCombatAudio.play()
         let damage = 30
         // criticalAttack(30)
         cpuHealth -= damage
@@ -167,6 +177,7 @@ function closeCombat() {
 
 function skullBash() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
+        skullBashAudio.play()
         let damage = 20
         // criticalAttack(20)
         cpuHealth -= damage
@@ -199,6 +210,7 @@ function dragoniteAttack() {
 } 
 
 function hyperBeam() {
+    hyperBeamAudio.play()
     let damage = 35
     // criticalAttack(35)
     playerHealth -= damage
@@ -208,6 +220,7 @@ function hyperBeam() {
 }
 
 function dragonRush() {
+    dragonRushAudio.play()
     let damage = 20
     // criticalAttack(20)
     playerHealth -= damage
@@ -217,6 +230,7 @@ function dragonRush() {
 }
 
 function hurricane() {
+    hurricaneAudio.play()
     let damage = 30
     // criticalAttack(30)
     playerHealth -= damage
@@ -226,6 +240,7 @@ function hurricane() {
 }
 
 function thunderPunch() {
+    thunderPunchAudio.play()
     let damage = 25
     // criticalAttack(25)
     playerHealth -= damage
