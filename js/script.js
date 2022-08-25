@@ -1,7 +1,9 @@
 // -----TODO-----
+// Refactor
+// ---STRETCH GOALS---
 // Try to add 'critical' attack chance
 // Add '>' to button on hover?
-// REFACTOR!
+// Nest game in gameboy color overlay?
 // -----------------------------
 console.log('hello from js')
 const attackOne = document.querySelector('#attack-one')
@@ -23,17 +25,33 @@ const cpuPokemon = document.querySelector('#cpu-pokemon')
 let playerHealth = 100
 let cpuHealth = 100
 let turn //= 'MANKEY'
+// let damage
 
 // -----Typewriter text effect-----
-function typeWriter() {
-    let i = 0
-    let speed = 50
-    if (i < text.length) {
-        text.textContent += text.charAt(i);
-        i++;
-        setTimeout(typeWriter, speed)
-    }
-}
+// function typeWriter() {
+//     let i = 0
+//     let speed = 50
+//     if (i < text.length) {
+//         text.textContent += text.charAt(i);
+//         i++;
+//         setTimeout(typeWriter, speed)
+//     }
+// }
+
+// const textInBox = text.innerText
+// let interval
+// let index = 0
+
+// interval = setInterval(typeWriter, 200)
+// function typeWriter() {
+//     if (index >= textInBox.length) {
+//         clearInterval(interval)
+//     } else {
+//         (text).append(text[index])
+//         index++
+//     }
+// }
+
 
 // -----Advance turn and DRAGONITE attack-----
 aButton.addEventListener('click', function() {
@@ -54,8 +72,8 @@ startButton.addEventListener('click', function() {
     cpuHealthBar.innerText = cpuHealth
     playerHealthBar.innerText = playerHealth
     turn = 'MANKEY'
-    typeWriter()
     text.innerText = `You're up first, MANKEY! Please select an attack!`
+    // typeWriter()
 })
 
 // -----Instructions-----
@@ -102,32 +120,32 @@ attackTwo.addEventListener('click', scratch)
 attackThree.addEventListener('click', closeCombat)
 attackFour.addEventListener('click', skullBash)
 
-// // -----Critical attack function-----
-// // damage is undefined and is not making damage * 2. 
-// function criticalAttack() {
-//     const random = Math.floor(Math.random() * 5)
-//     let damage
-//     console.log(random)
-//     if (random === 4) {
-//         damage *= 2
-//     }
-// }
+// -----Critical attack function-----
+// damage is undefined and is not making damage * 2. 
+function criticalAttack(dmg) {
+    const random = Math.floor(Math.random() * 5)
+    let damage = dmg
+    console.log(random)
+    if (random === 4) {
+        cpuHealth -= damage
+        console.log(damage)
+        console.log(`A critical hit! `)
+    }
+}
 
 
 // -----MANKEY moves-----
 function lowKick() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
         let damage = 20
-        // criticalAttack()
+        criticalAttack(20)
         cpuHealth -= damage
         console.log(`MANKEY used Low Kick!`)
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
         updateCpuHealth()
         text.innerText = `MANKEY used Low Kick! DRAGONITE has ${cpuHealth}hp!`
-        // userAttackAnimation()
         userAnimation()
         victory() // checks if cpu HP is 0
-        // cpuTakeDamage()
         turn = 'DRAGONITE'
         if (turn === 'DRAGONITE' && playerHealth > 0 && cpuHealth > 0) {
             console.log(`It's ${turn}'s turn to attack!`)
@@ -139,6 +157,7 @@ function lowKick() {
 function scratch() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
         let damage = 25
+        criticalAttack(25)
         cpuHealth -= damage
         console.log(`MANKEY used Scratch!`)
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
@@ -157,6 +176,7 @@ function scratch() {
 function closeCombat() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
         let damage = 30
+        criticalAttack(30)
         cpuHealth -= damage
         console.log(`MANKEY used Close Combat!`)
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
@@ -175,6 +195,7 @@ function closeCombat() {
 function skullBash() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
         let damage = 20
+        criticalAttack(20)
         cpuHealth -= damage
         console.log(`MANKEY used Skull Bash!`)
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
@@ -281,7 +302,6 @@ function cpuAnimation() {
     cpuAttackAnimation()
     setTimeout(cpuAttackResetAnimation, 100)
 }
-
 
 
 // -----message if player wins-----

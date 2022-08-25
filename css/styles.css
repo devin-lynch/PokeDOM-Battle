@@ -107,7 +107,7 @@ test {
     position: absolute;
     bottom: 100px;
     left: 10%;
-    width: 100%;
+    /* width: 100%; */
     
 }
 
@@ -125,7 +125,7 @@ test {
     position: absolute;
     bottom: 30px;
     left: 10%;
-    width: 100%;
+    /* width: 100%; */
 }
 
 #attack-four {
@@ -165,6 +165,7 @@ test {
     font-size: 22px;
     height: 60px;
     width: 260px;
+    /* width: 100%; */
     text-align: center;
     text-decoration: none;
     background-color: gray;
