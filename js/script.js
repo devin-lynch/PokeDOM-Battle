@@ -32,6 +32,7 @@ let lowKickAudio = new Audio ('./media/LowKick.wav')
 let scratchAudio = new Audio ('./media/Scratch.wav')
 let skullBashAudio = new Audio ('./media/SkullBash.wav')
 let closeCombatAudio =  new Audio ('./media/CloseCombat.wav')
+let victoryAudio = new Audio ('./media/Victory.mp3')
 
 
 // -----Typewriter text effect-----
@@ -54,6 +55,8 @@ aButton.addEventListener('click', function() {
 
 // -----GAME RESET BUTTON-----
 startButton.addEventListener('click', function() {
+    victoryAudio.pause()
+    victoryAudio.currentTime = 0
     text.style.fontSize = '22px'
     userPokemon.style.visibility = 'visible'
     cpuPokemon.style.visibility = 'visible'
@@ -286,7 +289,8 @@ function cpuAnimation() {
 // -----message if player wins-----
 function victory() {
     // Ensure you can't continue attacking after victory
-    if (cpuHealth <= 0) { 
+    if (cpuHealth <= 0) {
+        victoryAudio.play()
         // turn = 'gameOver'
         // typeWriter()
         cpuPokemon.style.visibility = 'hidden' // hides the defeated pokemon
