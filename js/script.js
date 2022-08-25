@@ -120,25 +120,25 @@ attackTwo.addEventListener('click', scratch)
 attackThree.addEventListener('click', closeCombat)
 attackFour.addEventListener('click', skullBash)
 
-// -----Critical attack function-----
-// damage is undefined and is not making damage * 2. 
-function criticalAttack(dmg) {
-    const random = Math.floor(Math.random() * 5)
-    let damage = dmg
-    console.log(random)
-    if (random === 4) {
-        cpuHealth -= damage
-        console.log(damage)
-        console.log(`A critical hit! `)
-    }
-}
+// // -----Critical attack function-----
+// // damage is undefined and is not making damage * 2. 
+// function criticalAttack(dmg) {
+//     const random = Math.floor(Math.random() * 5)
+//     let damage = dmg
+//     console.log(random)
+//     if (random === 4) {
+//         cpuHealth -= damage
+//         console.log(damage)
+//         console.log(`A critical hit! `)
+//     }
+// }
 
 
 // -----MANKEY moves-----
 function lowKick() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
         let damage = 20
-        criticalAttack(20)
+        // criticalAttack(20)
         cpuHealth -= damage
         console.log(`MANKEY used Low Kick!`)
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
@@ -157,7 +157,7 @@ function lowKick() {
 function scratch() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
         let damage = 25
-        criticalAttack(25)
+        // criticalAttack(25)
         cpuHealth -= damage
         console.log(`MANKEY used Scratch!`)
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
@@ -176,7 +176,7 @@ function scratch() {
 function closeCombat() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
         let damage = 30
-        criticalAttack(30)
+        // criticalAttack(30)
         cpuHealth -= damage
         console.log(`MANKEY used Close Combat!`)
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
@@ -195,7 +195,7 @@ function closeCombat() {
 function skullBash() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
         let damage = 20
-        criticalAttack(20)
+        // criticalAttack(20)
         cpuHealth -= damage
         console.log(`MANKEY used Skull Bash!`)
         console.log(`DRAGONITE has ${cpuHealth}hp!`)
@@ -235,6 +235,7 @@ function dragoniteAttack() {
 
 function hyperBeam() {
     let damage = 25
+    // criticalAttack(25)
     playerHealth -= damage
     console.log(`The wild DRAGONITE used Hyper Beam!`)
     text.innerText = `The wild DRAGONITE used Hyper Beam!`
@@ -244,6 +245,7 @@ function hyperBeam() {
 
 function dragonRush() {
     let damage = 20
+    // criticalAttack(20)
     playerHealth -= damage
     console.log(`The wild DRAGONITE used Dragon Rush!`)
     text.innerText = `The wild DRAGONITE used Dragon Rush!`
@@ -253,6 +255,7 @@ function dragonRush() {
 
 function hurricane() {
     let damage = 35
+    // criticalAttack(35)
     playerHealth -= damage
     console.log(`The wild DRAGONITE used Hurricane!`)
     text.innerText = `The wild DRAGONITE used Hurricane!`
@@ -262,6 +265,7 @@ function hurricane() {
 
 function thunderPunch() {
     let damage = 25
+    // criticalAttack(25)
     playerHealth -= damage
     console.log(`The wild DRAGONITE used Thunder Punch!`)
     text.innerText = `The wild DRAGONITE used Thunder Punch!`
