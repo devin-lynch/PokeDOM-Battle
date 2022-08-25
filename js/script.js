@@ -5,7 +5,6 @@
 // Add '>' to button on hover?
 // Nest game in gameboy color overlay?
 // -----------------------------
-console.log('hello from js')
 const attackOne = document.querySelector('#attack-one')
 const attackTwo = document.querySelector('#attack-two')
 const attackThree = document.querySelector('#attack-three')
@@ -140,15 +139,12 @@ function lowKick() {
         let damage = 20
         // criticalAttack(20)
         cpuHealth -= damage
-        console.log(`MANKEY used Low Kick!`)
-        console.log(`DRAGONITE has ${cpuHealth}hp!`)
         updateCpuHealth()
         text.innerText = `MANKEY used Low Kick! DRAGONITE has ${cpuHealth}hp!`
         userAnimation()
         victory() // checks if cpu HP is 0
         turn = 'DRAGONITE'
         if (turn === 'DRAGONITE' && playerHealth > 0 && cpuHealth > 0) {
-            console.log(`It's ${turn}'s turn to attack!`)
             text.innerText += ` It's ${turn}'s turn to attack! Press 'A' to continue!`
         }
     }
@@ -159,15 +155,12 @@ function scratch() {
         let damage = 25
         // criticalAttack(25)
         cpuHealth -= damage
-        console.log(`MANKEY used Scratch!`)
-        console.log(`DRAGONITE has ${cpuHealth}hp!`)
         updateCpuHealth()
         text.innerText = `MANKEY used Scratch! DRAGONITE has ${cpuHealth}hp!`
         userAnimation()
         victory() // checks if cpu HP is 0
         turn = 'DRAGONITE'
         if (turn === 'DRAGONITE' && playerHealth > 0 && cpuHealth > 0) {
-            console.log(`It's ${turn}'s turn to attack!`)
             text.innerText += ` It's ${turn}'s turn to attack! Press 'A' to continue!`
         }
     }
@@ -178,15 +171,12 @@ function closeCombat() {
         let damage = 30
         // criticalAttack(30)
         cpuHealth -= damage
-        console.log(`MANKEY used Close Combat!`)
-        console.log(`DRAGONITE has ${cpuHealth}hp!`)
         updateCpuHealth()
         text.innerText = `MANKEY used Close Combat! DRAGONITE has ${cpuHealth}hp!`
         userAnimation()
         victory() // checks if cpu HP is 0
         turn = 'DRAGONITE'
         if (turn === 'DRAGONITE' && playerHealth > 0 && cpuHealth > 0) {
-            console.log(`It's ${turn}'s turn to attack!`)
             text.innerText += ` It's ${turn}'s turn to attack! Press 'A' to continue!`
         }
     }
@@ -197,15 +187,12 @@ function skullBash() {
         let damage = 20
         // criticalAttack(20)
         cpuHealth -= damage
-        console.log(`MANKEY used Skull Bash!`)
-        console.log(`DRAGONITE has ${cpuHealth}hp!`)
         updateCpuHealth()
         text.innerText = `MANKEY used Skull Bash! DRAGONITE has ${cpuHealth}hp!`
         userAnimation()
         victory() // checks if cpu HP is 0
         turn = 'DRAGONITE'
         if (turn === 'DRAGONITE' && playerHealth > 0 && cpuHealth > 0) {
-            console.log(`It's ${turn}'s turn to attack!`)
             text.innerText += ` It's ${turn}'s turn to attack! Press 'A' to continue!`
         }
     }
@@ -220,12 +207,10 @@ function dragoniteAttack() {
     if (playerHealth > 0 && cpuHealth > 0) {
         const random = Math.floor(Math.random() * 4);
         cpuAttacks[random]()
-        console.log(`MANKEY has ${playerHealth}hp!`)
         cpuAnimation()
         updatePlayerHealth()
         if (playerHealth > 0) {
             text.innerText += ` MANKEY has ${playerHealth}hp!`
-            console.log(`It's ${turn}'s turn to attack!`)
             text.innerText += ` It's ${turn}'s turn to attack! Please select an attack!`
         }
         // console.log(cpuAttacks[random])
@@ -234,10 +219,9 @@ function dragoniteAttack() {
 
 
 function hyperBeam() {
-    let damage = 25
-    // criticalAttack(25)
+    let damage = 35
+    // criticalAttack(35)
     playerHealth -= damage
-    console.log(`The wild DRAGONITE used Hyper Beam!`)
     text.innerText = `The wild DRAGONITE used Hyper Beam!`
     defeat() // checks if user HP is 0
     turn = 'MANKEY'
@@ -247,17 +231,15 @@ function dragonRush() {
     let damage = 20
     // criticalAttack(20)
     playerHealth -= damage
-    console.log(`The wild DRAGONITE used Dragon Rush!`)
     text.innerText = `The wild DRAGONITE used Dragon Rush!`
     defeat() // checks if user HP is 0
     turn = 'MANKEY'
 }
 
 function hurricane() {
-    let damage = 35
-    // criticalAttack(35)
+    let damage = 30
+    // criticalAttack(30)
     playerHealth -= damage
-    console.log(`The wild DRAGONITE used Hurricane!`)
     text.innerText = `The wild DRAGONITE used Hurricane!`
     defeat() // checks if user HP is 0
     turn = 'MANKEY'
@@ -267,7 +249,6 @@ function thunderPunch() {
     let damage = 25
     // criticalAttack(25)
     playerHealth -= damage
-    console.log(`The wild DRAGONITE used Thunder Punch!`)
     text.innerText = `The wild DRAGONITE used Thunder Punch!`
     defeat() // checks if user HP is 0
     turn = 'MANKEY'
@@ -316,7 +297,6 @@ function victory() {
         // typeWriter()
         cpuPokemon.style.visibility = 'hidden' // hides the defeated pokemon
         text.innerText += ` The wild DRAGONITE fainted!  Please press 'START' to battle again!`
-        console.log(`The wild DRAGONITE fainted!`)
     }
 }
 
@@ -328,7 +308,6 @@ function defeat() {
         // typeWriter()
         userPokemon.style.visibility = 'hidden' // hides the defeated pokemon
         text.innerText += ` Your MANKEY fainted! You were overwhelmed by your defeat! Please press 'START' to battle again!`
-        console.log(`Your MANKEY fainted! You were overwhelmed by your defeat! Please press 'START' to battle again!`)
     }
 }
 
