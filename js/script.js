@@ -24,7 +24,6 @@ const cpuPokemon = document.querySelector('#cpu-pokemon')
 let playerHealth = 100
 let cpuHealth = 100
 let turn //= 'MANKEY'
-// let damage
 
 // -----Typewriter text effect-----
 // function typeWriter() {
@@ -36,21 +35,6 @@ let turn //= 'MANKEY'
 //         setTimeout(typeWriter, speed)
 //     }
 // }
-
-// const textInBox = text.innerText
-// let interval
-// let index = 0
-
-// interval = setInterval(typeWriter, 200)
-// function typeWriter() {
-//     if (index >= textInBox.length) {
-//         clearInterval(interval)
-//     } else {
-//         (text).append(text[index])
-//         index++
-//     }
-// }
-
 
 // -----Advance turn and DRAGONITE attack-----
 aButton.addEventListener('click', function() {
@@ -120,7 +104,7 @@ attackThree.addEventListener('click', closeCombat)
 attackFour.addEventListener('click', skullBash)
 
 // // -----Critical attack function-----
-// // damage is undefined and is not making damage * 2. 
+// // damage is undefined and is not making damage * 2. Remove multiplier and have crit function do same attack as orig to create double amount
 // function criticalAttack(dmg) {
 //     const random = Math.floor(Math.random() * 5)
 //     let damage = dmg
@@ -131,7 +115,6 @@ attackFour.addEventListener('click', skullBash)
 //         console.log(`A critical hit! `)
 //     }
 // }
-
 
 // -----MANKEY moves-----
 function lowKick() {
@@ -198,8 +181,6 @@ function skullBash() {
     }
 }
 
-
-
 // -----DRAGONITE moves-----
 const cpuAttacks = [hyperBeam, dragonRush, hurricane, thunderPunch]
 
@@ -216,7 +197,6 @@ function dragoniteAttack() {
         // console.log(cpuAttacks[random])
     }
 } 
-
 
 function hyperBeam() {
     let damage = 35
@@ -288,7 +268,6 @@ function cpuAnimation() {
     setTimeout(cpuAttackResetAnimation, 100)
 }
 
-
 // -----message if player wins-----
 function victory() {
     // Ensure you can't continue attacking after victory
@@ -310,4 +289,3 @@ function defeat() {
         text.innerText += ` Your MANKEY fainted! You were overwhelmed by your defeat! Please press 'START' to battle again!`
     }
 }
-
