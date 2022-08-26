@@ -34,7 +34,7 @@ let skullBashAudio = new Audio ('./media/SkullBash.wav')
 let closeCombatAudio =  new Audio ('./media/CloseCombat.wav')
 let victoryAudio = new Audio ('./media/Victory.mp3')
 let defeatAudio = new Audio ('./media/Defeat.mp3')
-
+let instructionsAudio = new Audio ('./media/Instructions.mp3')
 
 // -----Typewriter text effect-----
 // function typeWriter() {
@@ -60,6 +60,8 @@ startButton.addEventListener('click', function() {
     victoryAudio.currentTime = 0
     defeatAudio.pause()
     defeatAudio.currentTime = 0
+    instructionsAudio.pause()
+    instructionsAudio.currentTime = 0
     text.style.fontSize = '22px'
     userPokemon.style.visibility = 'visible'
     cpuPokemon.style.visibility = 'visible'
@@ -76,7 +78,7 @@ startButton.addEventListener('click', function() {
 
 // -----Instructions-----
 selectButton.addEventListener('click', function () {
-    // typeWriter()
+    instructionsAudio.play()
     text.style.fontSize = '18px'
     text.innerText = `The player goes first! Select one of four attacks. Follow on screen instructions to alternate turns until a victor is declared (a Pokemon reaching 0hp.) Press 'START' to begin!`
 })
@@ -118,23 +120,23 @@ attackTwo.addEventListener('click', scratch)
 attackThree.addEventListener('click', closeCombat)
 attackFour.addEventListener('click', skullBash)
 
-// -----Critical attack function-----
-// damage is undefined and is not making damage * 2. Remove multiplier and have crit function do same attack as orig to create double amount
-function rollForCrit(damageValue) {
-    const random = Math.floor(Math.random() * 5)
-    console.log(random)
-    if (random === 4) {
-        damage = damageValue * 2
-        console.log(`A critical hit! `)
-    }
-}
+// // -----Critical attack function-----
+// // damage is undefined and is not making damage * 2. Remove multiplier and have crit function do same attack as orig to create double amount
+// function rollForCrit(damageValue) {
+//     const random = Math.floor(Math.random() * 5)
+//     console.log(random)
+//     if (random === 4) {
+//         damage = damageValue * 2
+//         console.log(`A critical hit! `)
+//     }
+// }
 
 // -----MANKEY moves-----
 function lowKick() {
     if (turn === "MANKEY" && cpuHealth > 0 && playerHealth > 0) {
         lowKickAudio.play()
         let damage = 20
-        rollForCrit(20)
+        // rollForCrit(20)
         cpuHealth -= damage
         updateCpuHealth()
         text.innerText = `MANKEY used Low Kick! DRAGONITE has ${cpuHealth}hp!`
