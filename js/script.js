@@ -36,14 +36,15 @@ let victoryAudio = new Audio ('./media/Victory.mp3')
 let defeatAudio = new Audio ('./media/Defeat.mp3')
 let instructionsAudio = new Audio ('./media/Instructions.mp3')
 
-// -----Typewriter text effect-----
-// function typeWriter(strang) {
-//     let i = 0
-//     let speed = 50
-//     if (i < strang.length) {
-//         text.textContent += strang.charAt(i);
-//         i++;
-//         setTimeout(typeWriter, speed)
+
+// // -----Typewriter text effect-----
+// function typeWriter(string, index) {
+//     if (index < string.length) {
+//         console.log(string[index])
+//         // text.textContent += strang.charAt(index);
+//         text.innerText += string.charAt(index)
+//         setTimeout(typeWriter, 50, string, index+1)
+       
 //     }
 // }
 
@@ -67,6 +68,8 @@ startButton.addEventListener('click', function() {
     cpuHealthBar.innerText = cpuHealth
     playerHealthBar.innerText = playerHealth
     turn = 'MANKEY'
+    // text.innerText = ""
+    // typeWriter("You're up first, MANKEY! Please select an attack!", 0)
     text.innerText = `You're up first, MANKEY! Please select an attack!`
     // typeWriter()
 })
@@ -76,6 +79,8 @@ selectButton.addEventListener('click', function () {
     instructionsAudio.play()
     text.style.fontSize = '18px'
     // typeWriter("The player goes first! Select one of four attacks. Follow on screen instructions to alternate turns until a victor is declared (a Pokemon reaching 0hp.) Press 'START' to begin!")
+    // text.innerText = ""
+    // typeWriter("The player goes first! Select one of four attacks. Follow on screen instructions to alternate turns until a victor is declared (a Pokemon reaching 0hp.) Press 'START' to begin!", 0)
     text.innerText = `The player goes first! Select one of four attacks. Follow on screen instructions to alternate turns until a victor is declared (a Pokemon reaching 0hp.) Press 'START' to begin!`
 })
 
