@@ -42,3 +42,13 @@ https://devin-lynch.github.io/PokeDOM-Battle/
 
 
 ![battle format](https://i.imgur.com/aZWVWGv.png)
+
+---
+
+### SOURCES USED:
+    * https://www.pokemondb.net
+    * https://www.dafont.com
+    * https://downloads.khinsider.com
+    * https://www.w3schools.com
+    * https://www.stackoverflow.com
+
