@@ -43,6 +43,8 @@ https://devin-lynch.github.io/PokeDOM-Battle/
     * Set small goals as you progress rather than keeping an eye on the finish line
     * Learn to ask for help if there's no progress on an error after about 30 minutes
 
+---
+
 #### WIREFRAME:
 
 
