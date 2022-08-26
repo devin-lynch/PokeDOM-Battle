@@ -37,11 +37,11 @@ let defeatAudio = new Audio ('./media/Defeat.mp3')
 let instructionsAudio = new Audio ('./media/Instructions.mp3')
 
 // -----Typewriter text effect-----
-// function typeWriter() {
+// function typeWriter(strang) {
 //     let i = 0
 //     let speed = 50
-//     if (i < text.length) {
-//         text.textContent += text.charAt(i);
+//     if (i < strang.length) {
+//         text.textContent += strang.charAt(i);
 //         i++;
 //         setTimeout(typeWriter, speed)
 //     }
@@ -56,12 +56,7 @@ aButton.addEventListener('click', function() {
 
 // -----GAME RESET BUTTON-----
 startButton.addEventListener('click', function() {
-    victoryAudio.pause()
-    victoryAudio.currentTime = 0
-    defeatAudio.pause()
-    defeatAudio.currentTime = 0
-    instructionsAudio.pause()
-    instructionsAudio.currentTime = 0
+    stopAudioOnStartButton()
     text.style.fontSize = '22px'
     userPokemon.style.visibility = 'visible'
     cpuPokemon.style.visibility = 'visible'
@@ -80,6 +75,7 @@ startButton.addEventListener('click', function() {
 selectButton.addEventListener('click', function () {
     instructionsAudio.play()
     text.style.fontSize = '18px'
+    // typeWriter("The player goes first! Select one of four attacks. Follow on screen instructions to alternate turns until a victor is declared (a Pokemon reaching 0hp.) Press 'START' to begin!")
     text.innerText = `The player goes first! Select one of four attacks. Follow on screen instructions to alternate turns until a victor is declared (a Pokemon reaching 0hp.) Press 'START' to begin!`
 })
 
@@ -309,4 +305,13 @@ function defeat() {
         userPokemon.style.visibility = 'hidden' // hides the defeated pokemon
         text.innerText += ` Your MANKEY fainted! You were overwhelmed by your defeat! Please press 'START' to battle again!`
     }
+}
+
+function stopAudioOnStartButton() {
+    victoryAudio.pause()
+    victoryAudio.currentTime = 0
+    defeatAudio.pause()
+    defeatAudio.currentTime = 0
+    instructionsAudio.pause()
+    instructionsAudio.currentTime = 0
 }
