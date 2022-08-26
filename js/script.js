@@ -33,6 +33,7 @@ let scratchAudio = new Audio ('./media/Scratch.wav')
 let skullBashAudio = new Audio ('./media/SkullBash.wav')
 let closeCombatAudio =  new Audio ('./media/CloseCombat.wav')
 let victoryAudio = new Audio ('./media/Victory.mp3')
+let defeatAudio = new Audio ('./media/Defeat.mp3')
 
 
 // -----Typewriter text effect-----
@@ -57,6 +58,8 @@ aButton.addEventListener('click', function() {
 startButton.addEventListener('click', function() {
     victoryAudio.pause()
     victoryAudio.currentTime = 0
+    defeatAudio.pause()
+    defeatAudio.currentTime = 0
     text.style.fontSize = '22px'
     userPokemon.style.visibility = 'visible'
     cpuPokemon.style.visibility = 'visible'
@@ -291,8 +294,6 @@ function victory() {
     // Ensure you can't continue attacking after victory
     if (cpuHealth <= 0) {
         victoryAudio.play()
-        // turn = 'gameOver'
-        // typeWriter()
         cpuPokemon.style.visibility = 'hidden' // hides the defeated pokemon
         text.innerText += ` The wild DRAGONITE fainted!  Please press 'START' to battle again!`
     }
@@ -302,8 +303,7 @@ function victory() {
 function defeat() {
     // Ensure you can't continue attacking after defeat
     if (playerHealth <= 0) {
-        // turn = 'gameOver'
-        // typeWriter()
+        defeatAudio.play()
         userPokemon.style.visibility = 'hidden' // hides the defeated pokemon
         text.innerText += ` Your MANKEY fainted! You were overwhelmed by your defeat! Please press 'START' to battle again!`
     }
